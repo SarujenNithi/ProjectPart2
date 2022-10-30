@@ -1,0 +1,94 @@
+
+  <%- include partials/header.ejs %> <!--Link to different ejs files within the partials folder-->
+  <%- include partials/main_nav.ejs %>
+<html>
+  <body>
+    <main>
+      <div class="jumbotron"> <!--Display welcome message on top of page-->
+        <h1 class="display-4">Welcome to the <%= title %> page</h1>
+        <hr class="my-4">
+      </div>
+
+      <h2 id="aboutme">Me</h2> <!--Header-->
+        <div class="AMBox"><!--Box for picture and writing to go in-->
+          <img class="IMG" src="images/Me2.jpg"> <!--imports image from images file in the public folder-->
+          <P>Hello, my name is Sarujen Nithiananthan. I am a second year student at Ontario Tech University. I am studying bachelors of IT and plan to graduate by fall 2024. Once I am done studying I plan on finding a job within the cyber security field as i had always had an interest in it. </P><!--Introduction about me-->
+          <a class="Gmail" aria-current="page" href="https://accounts.google.com/v3/signin/identifier?dsh=S1544473491%3A1667053894053284&continue=https%3A%2F%2Fwww.google.com%2Fwebhp%3Fauthuser%3D1&ec=GAZAmgQ&hl=en&passive=true&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=AQDHYWqe2cWZH0VQLUXGTtFqxhBUo-9Z4mVNDFoVelSATS8_8y-HlswAuiyEeFxXkwPXvNC-iHfr" target="_blank"><i class="fa-solid fa-envelope fa-3x"></i></a>
+          <a class="GitHub" aria-current="page" href="https://github.com/SarujenNithi" target="_blank"><i class="fa-brands fa-github fa-3x"></i></a>
+          <a class="LinkedIn" aria-current="page" href="https://linkedin.com/in/sarujen" target="_blank"><i class="fa-brands fa-linkedin fa-3x"></i></a>
+          <!--^icons which link to socials-->
+        </div> 
+
+      <h2>Projects</h2>
+      <div id="projects">  <!--Creates a table-->
+        <div class="row">
+          <div class="col-sm">
+            <h6>Project 1</h6>
+            <img class="IMG1" src="images/project1.jpg"><!--Project 1 image and writing-->
+            <p>In this project I watched a youtube tutorial, which goes step by step on how to build a simple 2D mobile game. As I was following the tutorial I also made small changes to make the game unique. The project took me a few days and managed to create many aspects to the game such as the death animations, levels, options menu, and saves players highscore data. As the levels progress the enemies change and get harder.</p>
+          </div>
+
+          <div class="col-sm">
+            <h6>Project 2</h6>
+            <img class="IMG1" src="images/RestaurantPython.png"> 
+            <p>Last semester I took a course called Object Oriented Programming. For the final project we had to create a restaurant reservation system which allows users to make a reservation at a specific restaurant at a specific time and stores the information in a .txt file. Users are also able to cancel and update their reservations. This project helped teach me to use the different aspects of python which work together for this one project.</p>
+          </div>
+
+          <div class="col-sm">
+            <h6>Project 3</h6>
+            <img class="IMG1" src="images/P3.jpg">
+            <p>During one of my courses last year, I took a course which teaches students how to use data to make tableau graphs and charts. For the final project for that course, students were supposed to take a excel file and connect it with tableau which allows tableau to access the data within the excel file. We had to make all sorts of graphs and charts with different rows and columns. These topics include profit, labor cost, marginal cost etc.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="About">
+        About
+      </h2>
+        <div class="AMBox">
+          <video controls preload="auto" autoplay loop muted poster="aboutme.jpg" id="video"><!--plays video, autoplay is enabled and its muted when it first starts-->
+            <source src="images/AboutMe.mp4" type="video/mp4"> 
+            <source src="images/AboutMe.ogv" type="video/ogg"> 
+          </video>
+          <p>I created this video that show cases some of my hobeys, such as travelling, as well as my favourite foods to eat and places to visit.</p>
+        </div>
+
+      <section id="Contact">
+        <h3>Contact Me</h3>
+      
+        <div class="subhbox">
+          <form action=mailto:Sarujen.Nithiananthan@ontariotechu.net ?subject=Signup Form method="post" enctype="text/plain" name="ContactMe">
+           <!--Form to collect user information and sends it to my email-->
+            <p> 
+              <label for="name"> Full Name:</label>
+              <input type="text" id="name" size="40" placeholder="Full Name"> <!--creates input for user to enter name-->
+            </p>
+            <p>
+              <label for="LastName">Last Name:</label>
+              <input type="text" id="LastName" size="39" placeholder="Last Name">
+            </p>
+            <p>
+              <label for="Email">Email:</label>
+              <input type="text" id="Email" size="44" placeholder="Email Address">
+            </p>
+            <P>
+              <label for="Comments">Comments:</label>
+              <textarea id="comments" cols="40" rows="6" placeholder="Comments"></textarea>
+            </P>
+            <p> 
+              <input type="checkbox" name="Confirm" class="Confirm"><!--I am not a robot check-->
+              <label class="ConCheck">I am not a Robot</label> 
+            </p>
+            <button type="submit" class="button"><!--Submit button with icon to send me the data-->
+              <i class="fa-solid fa-paper-plane fa-1.5x"></i>
+              Submit
+            </button>
+            <p><input type="reset" value="Reset Form"></p><!--Clears form-->
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+<%- include partials/Bottom_nav.ejs %> <!--Link to different ejs files within the partials folder-->
+<%- include partials/footer.ejs %>

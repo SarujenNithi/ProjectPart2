@@ -1,0 +1,78 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; /*Asigns font style, if one is not working it uses the next listed*/
+}
+
+a {
+  color: #00B7FF; /*Changes color of writing */
+}
+main{
+  background-color: darkseagreen; /*changes colour of background*/
+  text-align: center; /*Aligns text center*/
+  font: "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.col-sm {
+  background-color: palegreen;
+  height: 600px; /*assigns height and width*/
+  width: 300px;
+  margin: 20px; /*changes margin to 20px*/
+  font: "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+
+.subhbox {
+  height: 600px;
+  width: 100%;
+  background-color: lightgreen;
+  border-radius: 10px; /*curves the corners of boxes*/
+  font: "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.ContactForm {
+  height: 500px;
+  width: 100%;
+  background-color: mediumseagreen;
+  border-radius: 10px;
+  font:"Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.AMBox {
+  height: 350px;
+  width: 100%;
+  background-color: mediumspringgreen;
+  font: "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+Img {
+  height: 200px;
+  width: 200px;
+
+}
+.Img1 {
+  height: 50px;
+  width: 50px;
+}
+
+video {
+  height: 250px;
+  width: 250px;
+}
+
+input {
+  border-radius: 5px;
+  font:"Lucida Grande", Helvetica, Arial, sans-serif;
+}
+textarea {
+  border-radius: 10px;
+  font:"Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+input.Confirm{
+  height: 25px;
+  width: 25px;
+}
+.ConCheck{
+  font-size: 30px;
+}
+
+
+
+
