@@ -1,0 +1,51 @@
+<%- include ('../partials/header.ejs') %>
+<%- include ('../partials/main_nav.ejs') %>
+<!-- Main Content -->
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-10">
+            <h1>BasketBall Team Builder</h1>
+            <a href="/Team-builder/add" class="btn btn-primary" role="button">
+                <i class="fas fa-plus-circle"></i> Add a Player </a>
+            <br>
+            <br>
+    <table class="table table-bordered table-striped table-hover">
+    <tr class="d-flex"><!--Table row for first row/ titles for each coloumn-->
+        <th class="text-center col-2">First Name</th>
+        <th class="text-center col-2">Last Name</th>
+        <th class="text-center col-1">Jersey Number</th>
+        <th class="text-center col-5">Description/team</th>
+        <th class="text-center col-1">Age</th>
+        <th class="text-center col-1"></th>
+        <th class="text-center col-1"></th>
+
+    </tr>
+    <!--Repeat the template / loop-->
+    <% for(let count=0; count < Booklist.length; count++) { %>
+        <tr class="d-flex">
+            <td class="text-center col-2"><%= Booklist[count].FirstName %></td>
+            <td class="text-center col-2"><%= Booklist[count].LastName %></td>
+            <td class="text-center col-1"><%= Booklist[count].JerseyNumber %></td>
+            <td class="text-center col-5"><%= Booklist[count].Description %></td>
+            <td class="text-center col-1"><%= Booklist[count].Age %></td>
+            <td class="text-center col-1">
+                <a href="/Team-builder/edit/<%= Booklist[count]._id %>"
+                    class="btn btn-primary">
+                    <i class="fas fa-pencil-alt"></i> Edit </a>
+            </td>
+            <td class="text-center col-1">
+                <a href="/Team-builder/delete/<%= Booklist[count]._id %>"
+                    class="btn btn-danger">
+                    <i class="fas fa-trash-alt"></i> Delete </a>
+            </td>
+        </tr>
+
+    <% } %>
+    </table>
+
+</div>
+</div>
+</main>
+<%- include ('../partials/Bottom_nav.ejs') %>
+<%- include ('../partials/footer.ejs') %>

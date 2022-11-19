@@ -1,15 +1,20 @@
 body {
+  background-color: darkseagreen;
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; /*Asigns font style, if one is not working it uses the next listed*/
+  height: auto;
+  width: auto;
+  font: 14px  Helvetica, Arial, sans-serif; /*Asigns font style, if one is not working it uses the next listed*/
 }
 
 a {
   color: #00B7FF; /*Changes color of writing */
 }
 main{
-  background-color: darkseagreen; /*changes colour of background*/
+  background-color: lightblue; /*changes colour of background*/
   text-align: center; /*Aligns text center*/
-  font: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font:  Arial, sans-serif;
+  height: auto;
+  width: auto;
 }
 .col-sm {
   background-color: palegreen;
@@ -43,7 +48,7 @@ main{
 }
 Img {
   height: 200px;
-  width: 200px;
+  width: 200px; /* sets height and width*/
 
 }
 .Img1 {
@@ -52,13 +57,13 @@ Img {
 }
 
 video {
-  height: 250px;
+  height: 250px; /* sets height and width*/
   width: 250px;
 }
 
 input {
   border-radius: 5px;
-  font:"Lucida Grande", Helvetica, Arial, sans-serif;
+  font:"Lucida Grande", Helvetica, Arial, sans-serif; /*sets font */
 }
 textarea {
   border-radius: 10px;
@@ -71,6 +76,27 @@ input.Confirm{
 }
 .ConCheck{
   font-size: 30px;
+}
+
+.mainTitle{
+  height: 75px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+.nbaTeams{
+  height: 150px;
+  width: 150px;
+}
+.nbaTeamsBox1{
+  height: 200px;
+  width: 200px;
+
+}
+
+.container-fluid{
+  height: 25px;
 }
 
 

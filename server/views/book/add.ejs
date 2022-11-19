@@ -1,0 +1,67 @@
+<%- include ('../partials/header.ejs') %>
+<%- include ('../partials/main_nav.ejs') %>
+
+<!--content for the Add page-->
+<div class="container">
+    <div class="row"> <!--Creates a table with rows and colums-->
+        <div class="col-md-offset-3 col-md-6"><!--creates columns with offset-->
+            <h1>Add BasketBall Player</h1> <!--header-->
+            <form class="form" method="post">
+
+                <div class="form-group">
+                    <label for="nameTextField">Player FirstName</label> <!--Displays title-->
+                    <input type="text" class="form-control"
+                    id="firstNameTextField"
+                    placeholder="Enter Player FirstName"     
+                    name="FirstName" required> <!--shows placeholder text until user enters-->
+                </div>
+
+                <div class="form-group">
+                    <label for="authorTextField">Player LastName</label>
+                    <input type="text" class="form-control"
+                    id="lastNameTextField"
+                    placeholder="Enter Player LastName"
+                    name="LastName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="publishedTextField">Original Jersey Number</label>
+                    <input type="text" class="form-control"
+                    id="jerseyNumberTextField"
+                    placeholder="Enter Player original Jersey Number"
+                    name="JerseyNumber" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="DescriptionTextField">Description/team</label>
+                    <textarea type="text" class="form-control"
+                    id="DescriptionTextField"
+                    placeholder="Enter the description"
+                    name="Description" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="priceTextField">Age</label>
+                    <input type="number" class="form-control"
+                    id="AgeTextField"
+                    placeholder="Enter player age"
+                    name="Age" required>
+                </div>
+                
+                    <br>
+
+                <button class="btn-btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit
+                </button>
+
+                <a href="/Team-builder" class="btn btn-warning">
+                    <i class="fas fa-undo"></i>Cancel
+                </a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include ('../partials/Bottom_nav.ejs') %>
+<%- include ('../partials/footer.ejs') %>

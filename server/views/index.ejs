@@ -1,0 +1,40 @@
+
+  <%- include ('partials/header.ejs') %> <!--Link to different ejs files within the partials folder-->
+  <%- include ('partials/main_nav.ejs') %>
+<html>
+  <body>
+    <main>
+      <div class="jumbotron"> <!--Display welcome message on top of page-->
+        <h1 class="display-4">Welcome to the <%= title %> page</h1>
+        <hr class="my-4">
+      </div>
+
+      <h1>Build Your Dream Team</h1>
+      <h5>Click below</h5>
+
+      <div class="row">
+        <div class="col">
+          <div class="nbaTeamsBox">
+            <p><img src="/images/f5dee3cbc7d2acc979956ede30bc04cc-1-1326x1000.jpg"> </p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="nbaTeamsBox">
+            <p><img src="/images/all-nba-split-2017-first-team-davis.jpg"></p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="nbaTeamsBox">
+            <p><img src="/images/049ba030-74fc-11ea-bfdf-b92812c7d9fb.jpg"></p>
+          </div>
+        </div>
+      </div>
+
+      <a href="/Team-builder" class="btn btn-primary" role="button">
+        <i class="fa-light fa-basketball"></i> Make Team</a>
+     </main>
+
+  </body>
+</html>
+<%- include ('partials/Bottom_nav.ejs') %> <!--Link to different ejs files within the partials folder-->
+<%- include ('partials/footer.ejs') %>
