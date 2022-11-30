@@ -4,20 +4,20 @@ let mongoose = require('mongoose');
 
 //connect with book model
 
-let Book = require('../models/book');
+let Team = require('../models/book');
 /* CRUD Operation */
 /* Read Operation */
 /* Get router for the book list */
 
 router.get('/',(req,res,next)=>{
-    Book.find((err, booklist)=>{
+    Team.find((err, teamlist)=>{
         if(err)
         {
             return console.error(err); //if error show error message
         }
         else 
         {
-            res.render('book/list',{title:'Books', Booklist: booklist});
+            res.render('book/list',{title:'Teams', Booklist: teamlist});
         }
     });
 });
@@ -26,21 +26,21 @@ router.get('/',(req,res,next)=>{
 /* Get Route for displaying the Add-page -- create operation */
 router.get('/add',(req,res,next)=>{
     
-    res.render('book/add',{title:'Add Book'})
+    res.render('book/add',{title:'Add Team'})
 
 });
 /* Post Route for Processing the Add-page -- create operation */
 router.post('/add',(req,res,next)=>{
     
-    let newPlayer = Book({
-        "FirstName":req.body.FirstName, //variables being used in data base and displaying them
-        "LastName":req.body.LastName,
-        "JerseyNumber":req.body.JerseyNumber,
-        "Description":req.body.Description,
-        "Age":req.body.Age
+    let newTeam = Team({
+        "Team":req.body.Team, //variables being used in data base and displaying them
+        "Eliminated":req.body.Eliminated,
+        "Players":req.body.Players,
+        "PreviousGames":req.body.PreviousGames,
+        "Place":req.body.Place
     });
 
-    Book.create(newPlayer,(err,Book)=>{
+    Team.create(newTeam,(err,Team)=>{
         if(err)
         {
             console.log(err);
@@ -48,7 +48,7 @@ router.post('/add',(req,res,next)=>{
         }
         else
         {
-            res.redirect('/Team-builder'); //redirects to localhost:300/Team-builder
+            res.redirect('/Fifa-Team'); //redirects to localhost:300/Team-builder
         }
     })
 
@@ -60,7 +60,7 @@ router.post('/add',(req,res,next)=>{
 router.get('/edit/:id',(req,res,next)=>{
     
     let id = req.params.id;
-    Book.findById(id,(err,bookToEdit)=>{
+    Team.findById(id,(err,teamToEdit)=>{
         if(err)
         {
             console.log(err);
@@ -68,7 +68,7 @@ router.get('/edit/:id',(req,res,next)=>{
         }
         else
         {
-            res.render('book/edit',{title:'Edit Player', book:bookToEdit});
+            res.render('book/edit',{title:'Edit Team', book:teamToEdit});
         }
     });
 
@@ -76,15 +76,15 @@ router.get('/edit/:id',(req,res,next)=>{
 /* Post Route for displaying the Edit Operation -- Update operation */
 router.post('/edit/:id',(req,res,next)=>{
     let id=req.params.id;
-    let updatePlayer = Book({
+    let updatePlayer = Team({
         "_id":id,
-        "FirstName":req.body.FirstName,
-        "LastName":req.body.LastName,
-        "JerseyNumber":req.body.JerseyNumber,
-        "Description":req.body.Description,
-        "Age":req.body.Age
+        "Team":req.body.Team, //variables being used in data base and displaying them
+        "Eliminated":req.body.Eliminated,
+        "Players":req.body.Players,
+        "PreviousGames":req.body.PreviousGames,
+        "Place":req.body.Place
     });
-    Book.updateOne({_id:id},updatePlayer,(err)=>{
+    Team.updateOne({_id:id},updatePlayer,(err)=>{
         if(err)
         {
             console.log(err);
@@ -92,7 +92,7 @@ router.post('/edit/:id',(req,res,next)=>{
         }
         else
         {
-            res.redirect('/Team-builder');
+            res.redirect('/Fifa-Team');
         }
     });
 });
@@ -101,7 +101,7 @@ router.post('/edit/:id',(req,res,next)=>{
 /* Get to perform delete operation -- Deletion */
 router.get('/delete/:id',(req,res,next)=>{
     let id = req.params.id;
-    Book.deleteOne({_id:id},(err)=>{
+    Team.deleteOne({_id:id},(err)=>{
         if(err)
         {
             console.log(err);
@@ -109,7 +109,7 @@ router.get('/delete/:id',(req,res,next)=>{
         }
         else
         {
-            res.redirect('/Team-builder'); //redirects to team-builder local host page
+            res.redirect('/Fifa-Team'); //redirects to team-builder local host page
         }
     })
 });

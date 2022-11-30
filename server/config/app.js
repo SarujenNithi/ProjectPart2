@@ -3,6 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+let Session = require('express-session');
+let passport = require('passport');
+let passportlocal = require('passport-local');
+let localStrategy = passportlocal.Strategy;
+let flash = require('connect-flash');
+
+var app = express();
 
 //config mongoDB
 let mongoose = require('mongoose');
@@ -17,12 +24,35 @@ mongoDB.once('open',()=>{
   console.log('connected to MongoDB');
 });
 
+//Express session
+app.use(Session({
+  secret: "SomeSecret",
+  saveUninitialized: false,
+  resave:false
+
+}));
+
+//initialize the flash
+app.use(flash());
+
+//initialize the passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+let userModel = require('../models/user');
+let User = userModel.User;
+
+//serialize and deserialize on the user information
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+
 
 var indexRouter = require('../routes/index');
 var usersRouter = require('../routes/users');
 let booksRouter = require('../routes/book'); /*routes to each file*/
 
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, '../views')); /*jumps to views file*/
@@ -37,7 +67,7 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));/*jumps out 
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/Team-builder', booksRouter); //localhost:3000/book-list
+app.use('/Fifa-Team', booksRouter); //localhost:3000/book-list
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

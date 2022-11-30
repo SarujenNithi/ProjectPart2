@@ -9,52 +9,52 @@
             <form class="form" method="post">
 
                 <div class="form-group">
-                    <label for="nameTextField">Player FirstName</label>
+                    <label for="TeamTextField">Team</label>
                     <input type="text" class="form-control"
-                    id="FirstNameTextField"
-                    placeholder="Enter Player FirstName"
-                    name="FirstName" 
-                    value="<%= book.FirstName %>"
+                    id="TeamNameTextField"
+                    placeholder="Enter Team"
+                    name="Team" 
+                    value="<%= book.Team %>"
                     required>
                 </div>
 
                 <div class="form-group">
-                    <label for="authorTextField">Player LastName</label>
+                    <label for="EliminatedTextField">Eliminated (y/n)</label>
                     <input type="text" class="form-control"
-                    id="lastNameTextField"
-                    placeholder="Enter Player LastName"
-                    name="LastName" 
-                    value="<%= book.lastName %>"
+                    id="EliminatedTextField"
+                    placeholder="Eliminated (y/n)"
+                    name="Eliminated" 
+                    value="<%= book.Eliminated %>"
                     required>
                 </div>
 
                 <div class="form-group">
-                    <label for="publishedTextField">Jersey Number</label>
+                    <label for="PlayersTextField">Players on Team</label>
                     <input type="text" class="form-control"
-                    id="jerseyNumberTextField"
-                    placeholder="Enter the Original player Jersey Number"
-                    name="JerseyNumber" 
-                    value="<%= book.jerseyNumber %>"
+                    id="PlayersNumberTextField"
+                    placeholder="Enter Players"
+                    name="Players" 
+                    value="<%= book.Players %>"
                     required>
                 </div>
 
                 <div class="form-group">
-                    <label for="descTextField">Description/team</label>
+                    <label for="PreviousGamesTextField">Previous Games</label>
                     <textarea type="text" class="form-control"
-                    id="descTextField"
-                    placeholder="Enter the description of player"
-                    name="description" required>
-                    <%= book.description %>
+                    id="PreviousGames"
+                    placeholder="Previous Games"
+                    name="PreviousGames" required>
+                    <%= book.PreviousGame %>
                 </textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="priceTextField">Age</label> <!--Edits the data and updates-->
+                    <label for="PlaceTextField">Place</label> <!--Edits the data and updates-->
                     <input type="number" class="form-control"
-                    id="AgeTextField"
-                    placeholder="Enter the player age"
-                    name="Age" 
-                    value="<%= book.Age %>"
+                    id="PlaceTextField"
+                    placeholder="Place"
+                    name="Place" 
+                    value="<%= book.Place %>"
                     required>
                 </div>
                 
@@ -64,7 +64,7 @@
                     <i class="fas fa-edit"></i> Submit
                 </button>
 
-                <a href="/Team-builder" class="btn btn-warning"> <!--Redirects user to team-builder local host page if they cancel-->
+                <a href="/Fifa-Team" class="btn btn-warning"> <!--Redirects user to team-builder local host page if they cancel-->
                     <i class="fas fa-undo"></i>Cancel
                 </a>
 

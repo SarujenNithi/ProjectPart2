@@ -1,20 +1,6 @@
-body {
-  background-color: darkseagreen;
-  padding: 50px;
-  height: auto;
-  width: auto;
-  font: 14px  Helvetica, Arial, sans-serif; /*Asigns font style, if one is not working it uses the next listed*/
-}
 
 a {
   color: #00B7FF; /*Changes color of writing */
-}
-main{
-  background-color: lightblue; /*changes colour of background*/
-  text-align: center; /*Aligns text center*/
-  font:  Arial, sans-serif;
-  height: auto;
-  width: auto;
 }
 .col-sm {
   background-color: palegreen;
@@ -98,7 +84,53 @@ input.Confirm{
 .container-fluid{
   height: 25px;
 }
+.background-image{
+  height: 100%;
+  width: 100%;
+}
 
+header {
+  height: 100%;
+  }
 
+  .display-4{
+    background-color: aliceblue;
+    height: 75px;
+    width: 100%;
+  }
+
+  main{
+    text-align: center; /*Aligns text center*/
+    font:  Arial, sans-serif;
+    height: auto;
+    color: black;
+    width: 100%;
+  }
+
+  body{
+    background: url(../images/grass.jpg) no-repeat center ;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+.Box{
+  height: 200px;
+  width: 100%;  
+  background-color: aliceblue;
+  margin-left: auto;
+  margin-right: auto;
+}
+.Box2{
+  color: crimson;
+}
+.d-flex{
+  background-color: aliceblue;
+}
+
+/*.logoImg{
+  height: 25px;
+  width: 25px;
+}*/
 
 

@@ -1,4 +1,4 @@
 module.exports = 
 {
-    "URI": "mongodb+srv://saru_assignment3:sarujen10@mongodbserver.vn8ogpn.mongodb.net/?retryWrites=true&w=majority" //connects to mongodb online database
+    "URI":"mongodb+srv://FifaPart1:Sarujen10@cluster0.nodcp1v.mongodb.net/test"
 }
