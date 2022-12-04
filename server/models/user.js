@@ -9,14 +9,22 @@ let User = mongoose.Schema({
         required: 'username is required'
 
     },
-   /* let User = mongoose.Schema({
-        username: {
+   
+        /*password: {
             type: String,
             default:"",
             trim:true,
-            required: 'username is required'
+            required: 'Password is required'
     
         }*/
+        displayName: {
+            type: String,
+            default:"",
+            trim:true,
+            required: 'DisplayName is required'
+    
+        },
+    
     created:
     {
         type: Date,
@@ -32,10 +40,12 @@ let User = mongoose.Schema({
 },
     {
         collection: "User"
-    });
+    }
+    
+);
 
     // configuration for user control
 
-let option = ({missingPasswordWord: "Wrong Password"});
+let option = ({missingPasswordWord: "Wrong Password/Missing Password"});
 User.plugin(passportLocalMongoose,option);
 module.exports.User = mongoose.model('User', User);

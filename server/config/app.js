@@ -9,6 +9,7 @@ let passportlocal = require('passport-local');
 let localStrategy = passportlocal.Strategy;
 let flash = require('connect-flash');
 
+
 var app = express();
 
 //config mongoDB
@@ -32,6 +33,7 @@ app.use(Session({
 
 }));
 
+
 //initialize the flash
 app.use(flash());
 
@@ -41,6 +43,10 @@ app.use(passport.session());
 
 let userModel = require('../models/user');
 let User = userModel.User;
+
+// implement a User Authrntication
+passport.use(User.createStrategy());
+
 
 //serialize and deserialize on the user information
 passport.serializeUser(User.serializeUser());

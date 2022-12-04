@@ -6,6 +6,16 @@ let mongoose = require('mongoose');
 
 let Team = require('../models/book');
 /* CRUD Operation */
+
+function requireAuthentication(req,res,next)
+{
+    if(!req.isAuthenticated())
+    {
+        return res.redirect('/login');
+    }
+    next();
+}
+
 /* Read Operation */
 /* Get router for the book list */
 
@@ -24,13 +34,13 @@ router.get('/',(req,res,next)=>{
 
 /* Add Operation */
 /* Get Route for displaying the Add-page -- create operation */
-router.get('/add',(req,res,next)=>{
+router.get('/add',requireAuthentication,(req,res,next)=>{
     
     res.render('book/add',{title:'Add Team'})
 
 });
 /* Post Route for Processing the Add-page -- create operation */
-router.post('/add',(req,res,next)=>{
+router.post('/add',requireAuthentication,(req,res,next)=>{
     
     let newTeam = Team({
         "Team":req.body.Team, //variables being used in data base and displaying them
@@ -57,7 +67,7 @@ router.post('/add',(req,res,next)=>{
 
 /* Edit Operation */
 /* Get Route for displaying the Edit-Operation -- Update operation */
-router.get('/edit/:id',(req,res,next)=>{
+router.get('/edit/:id',requireAuthentication,(req,res,next)=>{
     
     let id = req.params.id;
     Team.findById(id,(err,teamToEdit)=>{
@@ -74,7 +84,7 @@ router.get('/edit/:id',(req,res,next)=>{
 
 });
 /* Post Route for displaying the Edit Operation -- Update operation */
-router.post('/edit/:id',(req,res,next)=>{
+router.post('/edit/:id',requireAuthentication,(req,res,next)=>{
     let id=req.params.id;
     let updatePlayer = Team({
         "_id":id,
@@ -99,7 +109,7 @@ router.post('/edit/:id',(req,res,next)=>{
 
 /* Delete operation */
 /* Get to perform delete operation -- Deletion */
-router.get('/delete/:id',(req,res,next)=>{
+router.get('/delete/:id',requireAuthentication,(req,res,next)=>{
     let id = req.params.id;
     Team.deleteOne({_id:id},(err)=>{
         if(err)
